@@ -11,7 +11,7 @@ import SurveyStep3 from '@/components/assess/SurveyStep3';
 import LoadingScreen from '@/components/assess/LoadingScreen';
 
 const MIN_LOADING_MS = 6000;
-const TIMEOUT_MS = 30000;
+const TIMEOUT_MS = 90_000;
 
 function AssessInner() {
   const router = useRouter();
@@ -21,6 +21,7 @@ function AssessInner() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [name, setName] = useState('');
   const [stageName, setStageName] = useState('');
+  const [wikiUrl, setWikiUrl] = useState('');
   const [answers, setAnswers] = useState<SurveyAnswers>({});
   const [freeText, setFreeText] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,6 +54,7 @@ function AssessInner() {
           surveyAnswers: answers,
           freeText,
           useDemo: isDemo,
+          wikiUrl,
           name,
           stageName,
         }),
@@ -97,8 +99,10 @@ function AssessInner() {
           <SurveyStep1
             name={name}
             stageName={stageName}
+            wikiUrl={wikiUrl}
             onNameChange={setName}
             onStageNameChange={setStageName}
+            onWikiUrlChange={setWikiUrl}
             onNext={() => setStep(2)}
           />
         )}

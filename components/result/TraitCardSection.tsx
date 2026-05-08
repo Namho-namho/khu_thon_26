@@ -88,7 +88,7 @@ export default function TraitCardSection({ traitCard, name }: Props) {
       </header>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        <div className="h-[360px] w-full">
+        <div className="h-[420px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart data={radarData}>
               <PolarGrid stroke={SLATE_200} />

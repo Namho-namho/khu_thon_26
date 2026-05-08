@@ -58,6 +58,15 @@ export type JobRecommendation = {
   growthRate: string;
 };
 
+export type AssessmentRequest = {
+  surveyAnswers: SurveyAnswers;
+  freeText: string;
+  useDemo: boolean;
+  wikiUrl?: string;
+  name?: string;
+  stageName?: string;
+};
+
 export type AssessmentResult = {
   traitCard: TraitCard;
   portfolios: Portfolio[];

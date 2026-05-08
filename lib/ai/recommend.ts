@@ -88,7 +88,7 @@ ${formatJobs()}
         tools: [RECOMMEND_TOOL],
         tool_choice: { type: 'tool', name: 'submit_recommendations' },
       },
-      { timeout: 30_000 }
+      { timeout: 60_000 }
     );
 
     const block = response.content.find((b) => b.type === 'tool_use');

@@ -86,7 +86,7 @@ ${traitCard.summary}
         tools: [PORTFOLIO_TOOL],
         tool_choice: { type: 'tool', name: 'submit_portfolio' },
       },
-      { timeout: 30_000 }
+      { timeout: 60_000 }
     );
 
     const block = response.content.find((b) => b.type === 'tool_use');
