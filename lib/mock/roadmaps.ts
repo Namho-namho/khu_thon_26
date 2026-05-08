@@ -65,8 +65,8 @@ export const MOCK_ROADMAPS: Partial<Record<JobId, MockRoadmapEntry>> = {
       },
       {
         platform: '클래스101',
-        title: '댄스 강사 커리큘럼 설계 클래스',
-        url: 'https://class101.net/search?query=댄스+강사+커리큘럼',
+        title: '댄스 레슨 노하우 베스트 10',
+        url: 'https://class101.net/ko/search?query=%EB%8C%84%EC%8A%A4%20%EB%A0%88%EC%8A%A8%20%EB%85%B8%ED%95%98%EC%9A%B0',
         estimatedHours: '10시간',
       },
       {

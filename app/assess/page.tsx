@@ -34,6 +34,7 @@ function AssessInner() {
       setStageName('양**');
       setAnswers(DEMO_SURVEY_ANSWERS);
       setFreeText(DEMO_FREE_TEXT);
+      setWikiUrl('https://namu.wiki/w/%EC%96%91%EC%97%B0%EC%A0%9C');
       setStep(3);
     }
   }, [isDemo]);
