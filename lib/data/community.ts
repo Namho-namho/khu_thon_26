@@ -1,0 +1,121 @@
+import type { LiveClass, QAPost } from '@/lib/types';
+
+export const QA_POSTS: QAPost[] = [
+  {
+    id: 'qa-1',
+    title: '그룹 해체 후 첫 1년이 가장 막막했어요. 어떻게 시작하셨나요?',
+    body: '6년 동안 무대만 보고 살아서 일반 회사 자소서 한 줄도 못 쓰겠더라고요. 명함 없이 사람들 만나는 게 무서워서 한 달 넘게 집에만 있었습니다. 어디서부터 시작하셔야 한다고 알려주실 수 있을까요.',
+    asker: '29살이여',
+    askedAt: '3일 전',
+    mentor: { stageName: '리아', currentJob: '라이브 커머스 쇼호스트', yearsInJob: 2 },
+    answer:
+      '저도 첫 6개월은 거의 누워 있었어요. 결정적이었던 건 "내가 무대 위에서 했던 걸 글자로 풀어 적어보자"는 한 줄짜리 노트였습니다. 단독 콘서트 5회, 음방 1위, 즉흥 진행 일화 같은 사실을 담담히 적어두면 어느 직무로 가든 출발선이 됩니다.',
+    rating: 4.8,
+    helpfulCount: 142,
+  },
+  {
+    id: 'qa-2',
+    title: '음방 카메라랑 라이브 커머스 카메라는 정말 다른가요?',
+    body: '음악방송이랑 뮤직비디오는 6년 찍어봤는데, 라이브 커머스는 카메라가 너무 가까워서 오히려 어색해요. 한 시간 동안 혼자 떠드는 것도 처음이고요. 적응 기간이 어느 정도 걸리셨나요?',
+    asker: '카메라울렁증',
+    askedAt: '1주 전',
+    mentor: { stageName: '노아', currentJob: '라이브 커머스 쇼호스트', yearsInJob: 3 },
+    answer:
+      '저는 약 2개월 걸렸어요. 음방은 3분 단위로 끊어서 하지만 라이브는 호흡을 길게 끌고 가야 해서 멘트 끝나는 지점을 일부러 만들어두는 게 도움이 됐습니다. 시연 동작 사이에 2~3초 침묵을 의도적으로 넣어보세요.',
+    rating: 4.6,
+    helpfulCount: 88,
+  },
+  {
+    id: 'qa-3',
+    title: '안무 트레이너가 되려면 자격증이 필수인가요?',
+    body: '학원에서 보조 강사로 일하고 있는데 정식 강사 전환을 앞두고 있습니다. 생활스포츠지도사 2급을 따야 하는지, 아니면 경력만으로도 가능한지 헷갈려요.',
+    asker: '연습실거주중',
+    askedAt: '2주 전',
+    mentor: { stageName: '지온', currentJob: '보컬/댄스 트레이너', yearsInJob: 4 },
+    answer:
+      '대형 학원·기획사 채용은 자격증을 보고, 중소형 학원은 경력만 보는 곳도 많습니다. 다만 본인 클래스를 운영할 단계가 되면 학부모 신뢰 측면에서 자격증이 무조건 도움이 됩니다. 정식 강사 전환 후 첫 1년 안에 따두는 것을 추천드려요.',
+    rating: 4.9,
+    helpfulCount: 211,
+  },
+  {
+    id: 'qa-4',
+    title: '예전 팬들이 알아보면 어떻게 응대하시나요?',
+    body: '행사 MC 일을 시작했는데 객석에 옛날 팬분들이 계실 때가 있어요. 일에 집중하기도 어렵고 혹시 활동 시절 이야기를 해버릴까봐 신경 쓰입니다.',
+    asker: '무대공포증',
+    askedAt: '3주 전',
+    mentor: { stageName: '린', currentJob: '행사 MC / 리포터', yearsInJob: 2 },
+    answer:
+      '저는 행사 시작 전 5분을 "이전의 나를 잠시 스튜디오에 두고 온다"는 말로 정해두고 진행에 들어갑니다. 객석에 옛 팬이 보여도 "오늘은 진행자로 만났습니다"라는 짧은 인사 한 줄이면 양쪽 다 편안해지더라고요.',
+    rating: 4.7,
+    helpfulCount: 167,
+  },
+  {
+    id: 'qa-5',
+    title: '수입이 너무 들쑥날쑥해서 마음이 흔들립니다.',
+    body: '인플루언서 마케터로 전환한 지 8개월 됐는데, 어떤 달은 협찬이 몰리고 어떤 달은 0원입니다. 활동 시절 정산도 들쑥날쑥했지만 그래도 회사가 보호해줬는데 지금은 혼자라 무섭습니다.',
+    asker: '월급탈출',
+    askedAt: '1개월 전',
+    mentor: { stageName: '우리', currentJob: '인플루언서 마케터', yearsInJob: 3 },
+    answer:
+      '첫 1년은 수입 변동을 받아들이는 게 일이에요. 저는 월 평균선을 6개월 단위로 다시 그리면서 마음을 다잡았어요. 협찬이 몰리는 달의 30%를 따로 떼어 "0원의 달" 통장에 넣어두는 게 가장 큰 도움이 됐습니다.',
+    rating: 4.8,
+    helpfulCount: 256,
+  },
+];
+
+export const LIVE_CLASSES: LiveClass[] = [
+  {
+    id: 'class-1',
+    title: '전직 아이돌이 알려주는 라이브 커머스 입문',
+    mentor: { stageName: '리아', currentJob: '라이브 커머스 쇼호스트', profileBadge: '인기' },
+    price: '25,000원',
+    ratingAvg: 4.8,
+    studentCount: 342,
+    category: '커리어 전환',
+  },
+  {
+    id: 'class-2',
+    title: '객석 한 명 한 명 기억하기 - 팬 소통의 기술',
+    mentor: { stageName: '린', currentJob: '행사 MC / 리포터', profileBadge: '추천' },
+    price: '무료',
+    ratingAvg: 4.9,
+    studentCount: 1280,
+    category: '스킬',
+  },
+  {
+    id: 'class-3',
+    title: '그룹 해체 후 6개월, 무대를 떠나지 않는 법',
+    mentor: { stageName: '노아', currentJob: '라이브 커머스 쇼호스트', profileBadge: '신규' },
+    price: '무료',
+    ratingAvg: 4.7,
+    studentCount: 894,
+    category: '멘탈 케어',
+  },
+  {
+    id: 'class-4',
+    title: '8주 안에 첫 행사 MC 무대 서기',
+    mentor: { stageName: '린', currentJob: '행사 MC / 리포터', profileBadge: '인기' },
+    price: '35,000원',
+    ratingAvg: 4.7,
+    studentCount: 215,
+    category: '커리어 전환',
+  },
+  {
+    id: 'class-5',
+    title: '퍼포먼스 마케팅 1주차 - 채널 진단부터',
+    mentor: { stageName: '우리', currentJob: '인플루언서 마케터', profileBadge: '추천' },
+    price: '20,000원',
+    ratingAvg: 4.6,
+    studentCount: 178,
+    category: '스킬',
+  },
+  {
+    id: 'class-6',
+    title: '키즈 댄스 강사로 살아남는 첫 1년',
+    mentor: { stageName: '별', currentJob: '키즈 댄스 학원 강사', profileBadge: '신규' },
+    price: '30,000원',
+    ratingAvg: 4.5,
+    studentCount: 96,
+    category: '커리어 전환',
+  },
+];
