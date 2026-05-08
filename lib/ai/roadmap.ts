@@ -7,6 +7,7 @@ import type {
 } from '@/lib/types';
 import { JOBS } from '@/lib/data/jobs';
 import { ROADMAPS } from '@/lib/data/roadmaps';
+import { MOCK_ROADMAPS } from '@/lib/mock/roadmaps';
 import { MODEL, getAnthropicClient } from './client';
 
 type RoadmapAIOutput = {
@@ -176,6 +177,8 @@ export async function generateRoadmap(
   if (!job) throw new Error(`Unknown jobId: ${jobId}`);
 
   if (process.env.USE_MOCK === 'true') {
+    const mock = MOCK_ROADMAPS[jobId];
+    if (mock) return mock;
     return findFallback(jobId);
   }
 

@@ -34,13 +34,13 @@ export default function CommunityPage() {
           <TabsList className="bg-slate-100">
             <TabsTrigger
               value="qa"
-              className="px-4 data-active:text-violet-500"
+              className="px-4 data-active:text-sky-500"
             >
               Q&A
             </TabsTrigger>
             <TabsTrigger
               value="classes"
-              className="px-4 data-active:text-violet-500"
+              className="px-4 data-active:text-sky-500"
             >
               라이브 클래스
             </TabsTrigger>
@@ -50,7 +50,7 @@ export default function CommunityPage() {
             <button
               type="button"
               onClick={handleNewPost}
-              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-violet-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-600"
+              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-600"
             >
               <Plus className="h-4 w-4" />
               질문 작성하기

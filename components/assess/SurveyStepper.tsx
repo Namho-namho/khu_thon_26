@@ -16,7 +16,7 @@ export default function SurveyStepper({ step }: Props) {
       </div>
       <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200">
         <div
-          className="h-full rounded-full bg-violet-500 transition-all duration-300"
+          className="h-full rounded-full bg-sky-500 transition-all duration-300"
           style={{ width: `${pct}%` }}
         />
       </div>

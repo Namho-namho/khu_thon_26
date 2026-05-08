@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "After Stage — 전직 아이돌 진로 전환 AI 플랫폼",
+  title: "NXTAGE — 전직 아이돌 진로 전환 AI 플랫폼",
   description: "AI가 당신의 활동 기록을 읽고, 다음 길을 안내합니다",
 };
 
@@ -36,12 +36,12 @@ export default function RootLayout({
               href="/"
               className="text-lg font-semibold tracking-tight text-slate-800"
             >
-              After Stage
+              NXTAGE
             </Link>
             <nav>
               <Link
                 href="/community"
-                className="text-sm text-slate-700 transition-colors hover:text-violet-500"
+                className="text-sm text-slate-700 transition-colors hover:text-sky-500"
               >
                 커뮤니티
               </Link>
@@ -54,7 +54,7 @@ export default function RootLayout({
         <footer className="border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-6xl space-y-1 px-6 py-6 text-xs text-slate-500">
             <p>위키 텍스트 출처: 나무위키, 위키백과 (CC BY-NC-SA 2.0 KR)</p>
-            <p>© 2026 After Stage — Hackathon Demo</p>
+            <p>© 2026 NXTAGE — Hackathon Demo</p>
           </div>
         </footer>
       </body>

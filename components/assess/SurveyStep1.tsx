@@ -106,7 +106,7 @@ export default function SurveyStep1({
         <Button
           onClick={onNext}
           disabled={!canNext}
-          className="h-11 px-7 text-base bg-violet-500 text-white hover:bg-violet-600 [a]:hover:bg-violet-600"
+          className="h-11 px-7 text-base bg-sky-500 text-white hover:bg-sky-600 [a]:hover:bg-sky-600"
         >
           다음
         </Button>

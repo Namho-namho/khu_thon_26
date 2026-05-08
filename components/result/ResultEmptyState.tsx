@@ -17,7 +17,7 @@ export default function ResultEmptyState() {
             href="/assess?demo=1"
             className={cn(
               buttonVariants({ size: 'lg' }),
-              'h-12 px-7 text-base bg-violet-500 text-white hover:bg-violet-600 [a]:hover:bg-violet-600'
+              'h-12 px-7 text-base bg-sky-500 text-white hover:bg-sky-600 [a]:hover:bg-sky-600'
             )}
           >
             데모로 체험하기

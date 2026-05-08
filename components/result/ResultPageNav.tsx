@@ -12,7 +12,7 @@ export default function ResultPageNav() {
           <a
             key={a.href}
             href={a.href}
-            className="text-sm font-medium text-slate-600 transition-colors hover:text-violet-500"
+            className="text-sm font-medium text-slate-600 transition-colors hover:text-sky-500"
           >
             {a.label}
           </a>

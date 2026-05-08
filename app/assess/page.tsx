@@ -11,7 +11,7 @@ import SurveyStep3 from '@/components/assess/SurveyStep3';
 import LoadingScreen from '@/components/assess/LoadingScreen';
 
 const MIN_LOADING_MS = 6000;
-const TIMEOUT_MS = 90_000;
+const TIMEOUT_MS = 150_000;
 
 function AssessInner() {
   const router = useRouter();
@@ -30,8 +30,8 @@ function AssessInner() {
   useEffect(() => {
     if (isDemo && !initRef.current) {
       initRef.current = true;
-      setName('김○○');
-      setStageName('○○');
+      setName('양**');
+      setStageName('양**');
       setAnswers(DEMO_SURVEY_ANSWERS);
       setFreeText(DEMO_FREE_TEXT);
       setStep(3);

@@ -46,14 +46,14 @@ export default function SurveyStep3({
         <div className="flex justify-between text-xs">
           <span
             className={
-              charCount < MIN_CHARS ? 'text-slate-400' : 'text-violet-500'
+              charCount < MIN_CHARS ? 'text-slate-400' : 'text-sky-500'
             }
           >
             최소 {MIN_CHARS}자 이상
           </span>
           <span
             className={
-              charCount < MIN_CHARS ? 'text-slate-400' : 'text-violet-500'
+              charCount < MIN_CHARS ? 'text-slate-400' : 'text-sky-500'
             }
           >
             {charCount}자
@@ -72,7 +72,7 @@ export default function SurveyStep3({
         <Button
           onClick={onSubmit}
           disabled={!canSubmit}
-          className="h-11 px-7 text-base bg-violet-500 text-white hover:bg-violet-600 [a]:hover:bg-violet-600"
+          className="h-11 px-7 text-base bg-sky-500 text-white hover:bg-sky-600 [a]:hover:bg-sky-600"
         >
           분석 시작
         </Button>

@@ -26,7 +26,7 @@ export default function LoadingScreen({ messages }: Props = {}) {
     <div className="mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-6">
       <div className="relative h-16 w-16">
         <div className="absolute inset-0 rounded-full border-4 border-slate-200" />
-        <div className="absolute inset-0 animate-spin rounded-full border-4 border-transparent border-t-violet-500" />
+        <div className="absolute inset-0 animate-spin rounded-full border-4 border-transparent border-t-sky-500" />
       </div>
       <ul className="mt-10 space-y-3 text-center">
         {items.map((msg, i) => {
@@ -37,7 +37,7 @@ export default function LoadingScreen({ messages }: Props = {}) {
               key={i}
               className={
                 isCurrent
-                  ? 'text-lg font-medium text-violet-500'
+                  ? 'text-lg font-medium text-sky-500'
                   : 'text-sm text-slate-400'
               }
             >

@@ -6,7 +6,7 @@ import { MODEL, getAnthropicClient } from './client';
 const RECOMMEND_TOOL = {
   name: 'submit_recommendations',
   description:
-    '5개 직업에 대한 적합도 분석 결과를 matchScore 내림차순으로 1~5위까지 제출합니다.',
+    '주어진 모든 직업의 적합도를 분석한 뒤, matchScore 내림차순으로 상위 5개(1~5위)를 제출합니다.',
   input_schema: {
     type: 'object' as const,
     properties: {
@@ -42,6 +42,7 @@ const RECOMMEND_TOOL = {
 const SYSTEM_PROMPT = `당신은 전직 아이돌의 직업 추천 시스템입니다.
 
 원칙:
+- 주어진 직업 후보 전체를 평가한 뒤, 적합도가 가장 높은 상위 5개를 선별합니다.
 - 사용자의 8차원 성향 점수(traitCard.dimensions)와 각 직업의 requiredTraits를 가중 비교합니다.
 - 차원별 부합도, 강점/약점의 직무 영향력을 종합해 0~100 정수의 matchScore를 산출합니다.
 - 결과는 matchScore 내림차순으로 정렬해 1위(rank=1)부터 5위(rank=5)까지 반드시 5개를 제출합니다.
@@ -79,7 +80,7 @@ ${JSON.stringify(traitCard.dimensions, null, 2)}
 [성향 진단 요약]
 ${traitCard.summary}
 
-[직업 5개]
+[직업 후보]
 ${formatJobs()}
 
 위 정보를 바탕으로 5개 직업의 적합도를 산출해 submit_recommendations 도구로 제출하세요.`,

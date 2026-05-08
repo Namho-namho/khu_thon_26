@@ -42,7 +42,7 @@ export default function SurveyStep2({
             className="rounded-2xl border border-slate-200 bg-white p-6"
           >
             <p className="mb-5 text-base font-medium text-slate-800">
-              <span className="mr-2 text-violet-500">Q{idx + 1}.</span>
+              <span className="mr-2 text-sky-500">Q{idx + 1}.</span>
               {q.text}
             </p>
             <RadioGroup
@@ -83,7 +83,7 @@ export default function SurveyStep2({
         <Button
           onClick={onNext}
           disabled={!allAnswered}
-          className="h-11 px-7 text-base bg-violet-500 text-white hover:bg-violet-600 [a]:hover:bg-violet-600"
+          className="h-11 px-7 text-base bg-sky-500 text-white hover:bg-sky-600 [a]:hover:bg-sky-600"
         >
           다음
         </Button>

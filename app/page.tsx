@@ -53,7 +53,7 @@ export default function Home() {
                 href="/assess?demo=1"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-12 px-7 text-base bg-violet-500 text-white hover:bg-violet-600 [a]:hover:bg-violet-600"
+                  "h-12 px-7 text-base bg-sky-500 text-white hover:bg-sky-600 [a]:hover:bg-sky-600"
                 )}
               >
                 데모로 체험하기
@@ -89,8 +89,8 @@ export default function Home() {
                 <li>· 본인이 기억하는 것만</li>
               </ul>
             </div>
-            <div className="rounded-2xl border-2 border-violet-500 bg-white p-8 shadow-lg shadow-violet-500/10">
-              <Star className="mb-4 h-10 w-10 text-violet-500" />
+            <div className="rounded-2xl border-2 border-sky-500 bg-white p-8 shadow-lg shadow-sky-500/10">
+              <Star className="mb-4 h-10 w-10 text-sky-500" />
               <h3 className="mb-4 text-xl font-semibold text-slate-800">
                 전직 아이돌
               </h3>
@@ -116,8 +116,8 @@ export default function Home() {
                 className="rounded-2xl border border-slate-200 bg-white p-8"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="rounded-full bg-violet-500/10 p-2">
-                    <Icon className="h-6 w-6 text-violet-500" />
+                  <div className="rounded-full bg-sky-500/10 p-2">
+                    <Icon className="h-6 w-6 text-sky-500" />
                   </div>
                   <span className="text-sm font-medium text-slate-400">
                     STEP {step}

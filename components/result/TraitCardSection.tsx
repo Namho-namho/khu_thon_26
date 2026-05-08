@@ -33,7 +33,7 @@ const DIMENSION_ORDER: TraitDimension[] = [
   'mental_resilience',
 ];
 
-const VIOLET_500 = '#8B5CF6';
+const VIOLET_500 = '#0EA5E9';
 const SLATE_200 = '#E2E8F0';
 const SLATE_600 = '#475569';
 
@@ -48,11 +48,11 @@ function StarRating({ score }: { score: number }) {
       {Array.from({ length: fullStars }).map((_, i) => (
         <Star
           key={`f${i}`}
-          className="h-4 w-4 fill-violet-500 text-violet-500"
+          className="h-4 w-4 fill-sky-500 text-sky-500"
         />
       ))}
       {hasHalf && (
-        <StarHalf className="h-4 w-4 fill-violet-500 text-violet-500" />
+        <StarHalf className="h-4 w-4 fill-sky-500 text-sky-500" />
       )}
       {Array.from({ length: emptyStars }).map((_, i) => (
         <Star key={`e${i}`} className="h-4 w-4 text-slate-300" />
@@ -119,7 +119,7 @@ export default function TraitCardSection({ traitCard, name }: Props) {
             <li
               key={d}
               title={traitCard.reasoning[d]}
-              className="flex cursor-help items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 transition-colors hover:border-violet-300 hover:bg-violet-50"
+              className="flex cursor-help items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 transition-colors hover:border-sky-300 hover:bg-sky-50"
             >
               <span className="text-sm font-medium text-slate-700">
                 {DIMENSION_LABELS[d]}
@@ -130,8 +130,8 @@ export default function TraitCardSection({ traitCard, name }: Props) {
         </ul>
       </div>
 
-      <div className="mt-8 rounded-2xl bg-violet-500 p-6 text-white">
-        <p className="text-xs font-semibold uppercase tracking-wider text-violet-100">
+      <div className="mt-8 rounded-2xl bg-sky-500 p-6 text-white">
+        <p className="text-xs font-semibold uppercase tracking-wider text-sky-100">
           종합 진단
         </p>
         <p className="mt-2 leading-relaxed">{traitCard.summary}</p>

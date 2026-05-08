@@ -34,7 +34,7 @@ function RoadmapEmptyState() {
             href="/result"
             className={cn(
               buttonVariants({ size: 'lg' }),
-              'h-12 px-7 text-base bg-violet-500 text-white hover:bg-violet-600 [a]:hover:bg-violet-600'
+              'h-12 px-7 text-base bg-sky-500 text-white hover:bg-sky-600 [a]:hover:bg-sky-600'
             )}
           >
             결과 페이지로 이동

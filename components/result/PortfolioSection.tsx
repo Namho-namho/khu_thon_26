@@ -36,7 +36,7 @@ export default function PortfolioSection({ portfolios }: Props) {
         <button
           type="button"
           onClick={handleDownload}
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-violet-500 hover:text-violet-500"
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-sky-500 hover:text-sky-500"
         >
           <Download className="h-4 w-4" />
           포트폴리오 다운로드
@@ -49,7 +49,7 @@ export default function PortfolioSection({ portfolios }: Props) {
             <TabsTrigger
               key={p.targetJob}
               value={p.targetJob}
-              className="text-xs sm:text-sm data-active:text-violet-500"
+              className="text-xs sm:text-sm data-active:text-sky-500"
             >
               {p.targetJob}
             </TabsTrigger>
@@ -62,19 +62,19 @@ export default function PortfolioSection({ portfolios }: Props) {
             value={p.targetJob}
             className="mt-6 outline-none"
           >
-            <blockquote className="mb-6 rounded-2xl border-l-4 border-violet-500 bg-violet-50 p-5 text-sm leading-relaxed text-slate-700">
+            <blockquote className="mb-6 rounded-2xl border-l-4 border-sky-500 bg-sky-50 p-5 text-sm leading-relaxed text-slate-700">
               {p.summary}
             </blockquote>
             <div className="space-y-6">
               {p.sections.map((sec) => (
                 <div key={sec.title}>
-                  <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-violet-500">
+                  <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-sky-500">
                     {sec.title}
                   </h3>
                   <ul className="space-y-2">
                     {sec.content.map((item, i) => (
                       <li key={i} className="flex gap-2 text-slate-700">
-                        <span className="text-violet-500">·</span>
+                        <span className="text-sky-500">·</span>
                         <span className="leading-relaxed">{item}</span>
                       </li>
                     ))}
