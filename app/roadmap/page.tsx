@@ -1,8 +1,14 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import type {
+  AssessmentResult,
+  LearningResource,
+  RoadmapStep,
+  TraitCard,
+} from '@/lib/types';
 import { JOBS } from '@/lib/data/jobs';
 import { ROADMAPS } from '@/lib/data/roadmaps';
 import { buttonVariants } from '@/components/ui/button';
@@ -10,6 +16,7 @@ import { cn } from '@/lib/utils';
 import RoadmapHeader from '@/components/roadmap/RoadmapHeader';
 import RoadmapTimeline from '@/components/roadmap/RoadmapTimeline';
 import LearningResources from '@/components/roadmap/LearningResources';
+import LoadingScreen from '@/components/assess/LoadingScreen';
 
 function RoadmapEmptyState() {
   return (
@@ -41,17 +48,94 @@ function RoadmapEmptyState() {
 function RoadmapInner() {
   const sp = useSearchParams();
   const jobId = sp.get('jobId');
-  const roadmap = ROADMAPS.find((r) => r.jobId === jobId);
   const job = JOBS.find((j) => j.id === jobId);
+  const fallback = ROADMAPS.find((r) => r.jobId === jobId);
 
-  if (!roadmap || !job) return <RoadmapEmptyState />;
+  const [timeline, setTimeline] = useState<RoadmapStep[] | null>(null);
+  const [learningResources, setLearningResources] = useState<
+    LearningResource[] | null
+  >(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!jobId || !fallback) {
+      setLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+    const raw = sessionStorage.getItem('assessResult');
+
+    if (!raw) {
+      setTimeline(fallback.timeline);
+      setLearningResources(fallback.learningResources);
+      setLoading(false);
+      return;
+    }
+
+    let traitCard: TraitCard;
+    try {
+      const parsed = JSON.parse(raw) as AssessmentResult;
+      traitCard = parsed.traitCard;
+    } catch {
+      setTimeline(fallback.timeline);
+      setLearningResources(fallback.learningResources);
+      setLoading(false);
+      return;
+    }
+
+    fetch('/api/roadmap', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ jobId, traitCard }),
+    })
+      .then(async (res) => {
+        if (!res.ok) throw new Error('roadmap api failed');
+        return res.json();
+      })
+      .then((data) => {
+        if (cancelled) return;
+        setTimeline(data.timeline);
+        setLearningResources(data.learningResources);
+      })
+      .catch((err) => {
+        console.warn('[roadmap] AI generation failed, using fallback:', err);
+        if (cancelled) return;
+        setTimeline(fallback.timeline);
+        setLearningResources(fallback.learningResources);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [jobId, fallback]);
+
+  if (!jobId || !job || !fallback) return <RoadmapEmptyState />;
+
+  if (loading) {
+    return (
+      <LoadingScreen
+        messages={[
+          '당신의 강점을 분석하는 중...',
+          '직무 핵심 역량과 매칭 중...',
+          '맞춤 로드맵을 설계하는 중...',
+          '추천 학습 자료를 정리하는 중...',
+        ]}
+      />
+    );
+  }
+
+  if (!timeline || !learningResources) return <RoadmapEmptyState />;
 
   return (
     <main className="mx-auto max-w-5xl space-y-12 px-6 py-12">
-      <RoadmapHeader job={job} overview={roadmap.overview} />
-      <RoadmapTimeline timeline={roadmap.timeline} />
+      <RoadmapHeader job={job} overview={fallback.overview} />
+      <RoadmapTimeline timeline={timeline} />
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        <LearningResources resources={roadmap.learningResources} />
+        <LearningResources resources={learningResources} />
       </div>
     </main>
   );
