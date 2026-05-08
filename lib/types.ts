@@ -19,7 +19,12 @@ export type JobId =
   | 'vocal-dance-trainer'
   | 'mc-reporter'
   | 'influencer-marketer'
-  | 'kids-dance-instructor';
+  | 'kids-dance-instructor'
+  | 'kpop-choreographer'
+  | 'agency-ar-manager'
+  | 'musical-actor'
+  | 'voice-coach'
+  | 'event-producer';
 
 export type Job = {
   id: JobId;
@@ -90,24 +95,11 @@ export type LearningResource = {
   estimatedHours: string;
 };
 
-export type EducationTrackType =
-  | '검정고시'
-  | '방송통신대'
-  | '학점은행제'
-  | '직업훈련';
-
-export type EducationTrack = {
-  type: EducationTrackType;
-  description: string;
-  recommendedFor: string;
-};
-
 export type Roadmap = {
   jobId: JobId;
   overview: string;
   timeline: RoadmapStep[];
   learningResources: LearningResource[];
-  educationTracks: EducationTrack[];
 };
 
 export type Mentor = {

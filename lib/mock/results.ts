@@ -198,8 +198,8 @@ export const MOCK_ASSESSMENT_RESULT: AssessmentResult = {
       matchScore: 92,
       reason:
         '카메라 친화도 4.7, 팬 소통 4.8, 즉흥 대응 4.3이 모두 직무 핵심 역량과 직결되며, 6년간의 무대·방송 경험이 즉시 경쟁력으로 전환됩니다.',
-      avgMonthlySalary: '월 평균 350만원 (실적 인센티브 별도)',
-      growthRate: '연 25% (2024년 시장 기준)',
+      avgMonthlySalary: '월 250~330만원 (초봉 기준)',
+      growthRate: '연 15% (시장 규모 성장)',
     },
     {
       rank: 2,
@@ -207,8 +207,8 @@ export const MOCK_ASSESSMENT_RESULT: AssessmentResult = {
       matchScore: 88,
       reason:
         '무대 장악력 4.5와 즉흥 대응 4.3이 직무 핵심과 정합하며, 해체 이후 이미 행사 MC·축제 사회자로 실전 경험을 쌓고 있어 진입 장벽이 가장 낮습니다.',
-      avgMonthlySalary: '행사당 50~200만원 (월 환산 약 250만원)',
-      growthRate: '연 5%',
+      avgMonthlySalary: '행사당 평균 41만원 (월 환산 약 250만원)',
+      growthRate: 'MICE/이벤트 시장 안정 성장',
     },
     {
       rank: 3,
@@ -216,8 +216,8 @@ export const MOCK_ASSESSMENT_RESULT: AssessmentResult = {
       matchScore: 80,
       reason:
         '카메라 친화도와 팬 소통 강점이 결정적이며, 자작곡 작사 경험을 카피·내러티브로 확장하면 콘텐츠 기획 약점도 보완 가능합니다.',
-      avgMonthlySalary: '월 평균 400만원 (광고 단가 별도)',
-      growthRate: '연 30%',
+      avgMonthlySalary: '월 300~550만원 (마케터 직군 평균)',
+      growthRate: '연 17% (글로벌 인플루언서 마케팅 CAGR)',
     },
     {
       rank: 4,
@@ -225,8 +225,8 @@ export const MOCK_ASSESSMENT_RESULT: AssessmentResult = {
       matchScore: 74,
       reason:
         '자기관리 4.5와 팬 소통 4.8이 학생·학부모 신뢰 형성과 직결되며, 안정적 수입을 원할 때 매력적인 후보입니다. 카메라·즉흥 강점은 직접 활용도가 낮습니다.',
-      avgMonthlySalary: '월 평균 250만원',
-      growthRate: '연 6%',
+      avgMonthlySalary: '월 210~280만원 (잡코리아 공고 기준)',
+      growthRate: '키즈 사교육 시장 안정세',
     },
     {
       rank: 5,
@@ -234,8 +234,8 @@ export const MOCK_ASSESSMENT_RESULT: AssessmentResult = {
       matchScore: 68,
       reason:
         '자기관리와 협업·부 리더 경험이 적합하나, 강점인 카메라 친화도와 팬 소통이 직무 핵심과 직접 연결되지 않아 우선순위가 낮습니다.',
-      avgMonthlySalary: '월 평균 280만원',
-      growthRate: '연 8%',
+      avgMonthlySalary: '월 250~400만원 (학원 기본급 + 레슨 인센티브)',
+      growthRate: '실용음악 학원 시장 안정세',
     },
   ],
 };

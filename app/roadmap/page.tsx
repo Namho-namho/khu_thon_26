@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils';
 import RoadmapHeader from '@/components/roadmap/RoadmapHeader';
 import RoadmapTimeline from '@/components/roadmap/RoadmapTimeline';
 import LearningResources from '@/components/roadmap/LearningResources';
-import EducationTracks from '@/components/roadmap/EducationTracks';
 
 function RoadmapEmptyState() {
   return (
@@ -53,7 +52,6 @@ function RoadmapInner() {
       <RoadmapTimeline timeline={roadmap.timeline} />
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <LearningResources resources={roadmap.learningResources} />
-        <EducationTracks tracks={roadmap.educationTracks} />
       </div>
     </main>
   );

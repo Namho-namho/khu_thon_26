@@ -34,11 +34,16 @@ export async function POST(req: NextRequest) {
       wikiText
     );
 
-    const portfolios = await Promise.all(
-      JOBS.map((j) => generatePortfolio(wikiText, traitCard, j.id))
-    );
-
     const recommendations = await recommendJobs(traitCard);
+
+    const top5Jobs = recommendations
+      .slice(0, 5)
+      .map((rec) => JOBS.find((j) => j.name === rec.jobName))
+      .filter((j): j is NonNullable<typeof j> => j !== undefined);
+
+    const portfolios = await Promise.all(
+      top5Jobs.map((j) => generatePortfolio(wikiText, traitCard, j.id))
+    );
 
     const result: AssessmentResult = {
       traitCard,
